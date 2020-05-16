@@ -1,4 +1,5 @@
 cordova create $1 com.$2.app $2 &>/dev/null
+export ANDROID_HOME=~/Android/Sdk
 echo "Temporary App Generated"
 cd $1 
 cordova platform add android &>/dev/null
