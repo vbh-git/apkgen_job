@@ -30,7 +30,8 @@ next }1' config.xml >> config1
 mv config1 config.xml
 echo "Modified required files"
 cordova build android &>/dev/null
-mv ./platforms/android/app/build/outputs/apk/debug/app-debug.apk /root/generated_apps/$1$3.apk
+APPURL=$(echo $3 | cut -d '.' -f 2)
+mv ./platforms/android/app/build/outputs/apk/debug/app-debug.apk /root/generated_apps/$1${APPURL}.apk
 cd ../
 rm -rf $1
 echo "App Generated"
